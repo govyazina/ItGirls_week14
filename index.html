@@ -6,6 +6,20 @@
     <link rel="stylesheet" href="./assets/styles/index.css">
 </head>
 <body>
+<div class="wrapper">
+    <section class="calc">
+        <label for="a"></label>
+        <input type="number" oninput="calculate()" id="a">
+        <div class="calc__sign">+</div>
+        <label for="b"></label>
+        <input type="number" oninput="calculate()" id="b">
+        <div class="calc__sign">=</div>
+        <label for="result"></label>
+        <input type="number" readonly id="result">
+
+
+    </section>
+</div>
 
 <script src="./assets/scripts/index.js"></script>
 </body>
