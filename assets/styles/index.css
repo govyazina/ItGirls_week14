@@ -1,6 +1,11 @@
+/* calc */
+
 .calc__sign {
     display: inline-block;
 }
+
+
+/* colors */
 
 .colors {
     display: flex;
@@ -30,4 +35,26 @@
 
 .violet {
     background-color: mediumpurple;
+}
+
+/*gallery*/
+
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.prev, .next {
+    padding: 5%;
+}
+
+.photo {
+    width: 50%;
+}
+
+.photo img {
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
