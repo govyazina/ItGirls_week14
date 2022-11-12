@@ -29,6 +29,10 @@ function calculate(operation, operator) {
     document.querySelector("#result").value = sum(a, b);
 
 }
+
+
+//colors
+
 let i;
 
 function changeColor(click) {
