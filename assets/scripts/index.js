@@ -1,11 +1,10 @@
 function askNumberFirst () {
-   let a = document.querySelector ("#a").value
-    return a
+    return document.querySelector ("#a").value;
 }
 
 function askNumberSecond () {
-    let b = document.querySelector ("#b")
-    return b.value
+    return document.querySelector ("#b").value;
+
 }
 
 function sum(a, b) {
@@ -30,11 +29,17 @@ function calculate(operation, operator) {
     document.querySelector("#result").value = sum(a, b);
 
 }
+let i;
 
 function changeColor(click) {
     let element = click.target;
 
-
-
-    element.setAttribute("class", "green");
+    let colors = ['green', 'pink', 'yellow', 'blue', 'violet'];
+    if (i<4) {
+        i++
+    }
+    else {
+        i=0;
+    }
+    element.setAttribute("class", colors[i]);
 }
