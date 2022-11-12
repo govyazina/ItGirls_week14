@@ -8,9 +8,9 @@
 <body>
 <div class="wrapper">
     <section class="calc">
-        <div class="operators">
+        <div class="operators" oninput="checkOperator()">
             <label for="sum">+</label>
-            <input type="radio" name="operators" id="sum" value="+">
+            <input type="radio" name="operators" id="sum"  value="+">
             <label for="sub">-</label>
             <input type="radio" name="operators" id="sub" value="-">
             <label for="mul">*</label>
@@ -21,12 +21,12 @@
 
         <label for="a"></label>
         <input type="number" oninput="calculate()" id="a">
-        <div class="calc__sign">?</div>
+        <div class="calc__sign calc__operator">?</div>
         <label for="b"></label>
         <input type="number" oninput="calculate()" id="b">
         <div class="calc__sign">=</div>
         <label for="result"></label>
-        <input type="number" readonly id="result">
+        <input type="text" readonly id="result">
 
 
     </section>

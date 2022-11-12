@@ -1,3 +1,12 @@
+//calculate
+let operator;
+function checkOperator(){
+     operator = document.querySelector('input[name="operators"]:checked').value;
+    document.querySelector(".calc__operator").innerHTML = operator;
+    calculate();
+}
+
+
 function askNumberFirst () {
     return document.querySelector ("#a").value;
 }
@@ -23,10 +32,23 @@ function div(a, b) {
     return a / b;
 }
 
-function calculate(operation, operator) {
+function calculate() {
     let a = Number(askNumberFirst());
     let b = Number(askNumberSecond());
-    document.querySelector("#result").value = sum(a, b);
+    let result = "?";
+if (operator==="+") {
+    result = sum(a, b)
+}
+else if (operator==="-") {
+    result = sub(a, b);
+}
+else if (operator==="*") {
+    result = mul(a,b);
+}
+else if (operator==="/") {
+    result = div(a, b);
+}
+ document.querySelector("#result").value = result;
 
 }
 
