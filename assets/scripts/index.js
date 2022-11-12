@@ -47,3 +47,36 @@ function changeColor(click) {
     }
     element.setAttribute("class", colors[i]);
 }
+
+//gallery
+
+let photoNumber = 0;
+
+function prevPhoto() {
+    photoNumber--;
+    if (photoNumber<0) {
+        photoNumber=5;
+    }
+    changePhoto(photoNumber);
+}
+
+function nextPhoto() {
+    photoNumber++;
+    if (photoNumber>5) {
+        photoNumber=0;
+    }
+    changePhoto(photoNumber);
+}
+
+function changePhoto(i) {
+    let photo = [
+        './assets/img/IMG_3862.jpeg',
+        './assets/img/IMG_3863.jpeg',
+        './assets/img/IMG_3864.jpeg',
+        './assets/img/IMG_3867.jpeg',
+        './assets/img/IMG_3874.jpeg',
+        './assets/img/IMG_3876.jpeg',
+    ];
+
+    document.querySelector(".photo img").setAttribute("src", photo[i]);
+}
