@@ -1,3 +1,33 @@
 .calc__sign {
     display: inline-block;
 }
+
+.colors {
+    display: flex;
+}
+
+.green, .pink, .yellow, .blue, .violet {
+    width: 25vw;
+    height: 25vw;
+    margin: 5%;
+}
+
+.green {
+    background-color: darkseagreen;
+}
+
+.blue {
+    background-color: cornflowerblue;
+}
+
+.yellow {
+    background-color: #faf275;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.violet {
+    background-color: mediumpurple;
+}

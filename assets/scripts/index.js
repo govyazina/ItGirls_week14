@@ -31,5 +31,10 @@ function calculate(operation, operator) {
 
 }
 
+function changeColor(click) {
+    let element = click.target;
 
 
+
+    element.setAttribute("class", "green");
+}
