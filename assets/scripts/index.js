@@ -1,54 +1,44 @@
 //calculate
 let operator;
-function checkOperator(){
-     operator = document.querySelector('input[name="operators"]:checked').value;
+
+function checkOperator() {
+    operator = document.querySelector('input[name="operators"]:checked').value;
     document.querySelector(".calc__operator").innerHTML = operator;
     calculate();
 }
 
 
-function askNumberFirst () {
-    return document.querySelector ("#a").value;
+function askNumberFirst() {
+    return document.querySelector("#a").value;
 }
 
-function askNumberSecond () {
-    return document.querySelector ("#b").value;
+function askNumberSecond() {
+    return document.querySelector("#b").value;
 
 }
 
-function sum(a, b) {
-    return a + b;
-}
+const sum = (a, b) => a + b;
 
-function sub(a, b) {
-    return a - b;
-}
+const sub = (a, b) => a - b;
 
-function mul(a, b) {
-    return a * b;
-}
+const mul = (a, b) => a * b;
 
-function div(a, b) {
-    return a / b;
-}
+const div = (a, b) => a / b;
 
 function calculate() {
-    let a = Number(askNumberFirst());
-    let b = Number(askNumberSecond());
+    const a = Number(askNumberFirst());
+    const b = Number(askNumberSecond());
     let result = "?";
-if (operator==="+") {
-    result = sum(a, b)
-}
-else if (operator==="-") {
-    result = sub(a, b);
-}
-else if (operator==="*") {
-    result = mul(a,b);
-}
-else if (operator==="/") {
-    result = div(a, b);
-}
- document.querySelector("#result").value = result;
+    if (operator === "+") {
+        result = sum(a, b)
+    } else if (operator === "-") {
+        result = sub(a, b);
+    } else if (operator === "*") {
+        result = mul(a, b);
+    } else if (operator === "/") {
+        result = div(a, b);
+    }
+    document.querySelector("#result").value = result;
 
 }
 
@@ -58,14 +48,12 @@ else if (operator==="/") {
 let i;
 
 function changeColor(click) {
-    let element = click.target;
-
-    let colors = ['green', 'pink', 'yellow', 'blue', 'violet'];
-    if (i<4) {
+    const element = click.target;
+    const colors = ['green', 'pink', 'yellow', 'blue', 'violet'];
+    if (i < colors.length - 1) {
         i++
-    }
-    else {
-        i=0;
+    } else {
+        i = 0;
     }
     element.setAttribute("class", colors[i]);
 }
@@ -73,32 +61,32 @@ function changeColor(click) {
 //gallery
 
 let photoNumber = 0;
+const photo = [
+    './assets/img/IMG_3862.jpeg',
+    './assets/img/IMG_3863.jpeg',
+    './assets/img/IMG_3864.jpeg',
+    './assets/img/IMG_3867.jpeg',
+    './assets/img/IMG_3874.jpeg',
+    './assets/img/IMG_3876.jpeg',
+];
+
 
 function prevPhoto() {
     photoNumber--;
-    if (photoNumber<0) {
-        photoNumber=5;
+    if (photoNumber < 0) {
+        photoNumber = 5;
     }
     changePhoto(photoNumber);
 }
 
 function nextPhoto() {
     photoNumber++;
-    if (photoNumber>5) {
-        photoNumber=0;
+    if (photoNumber > 5) {
+        photoNumber = 0;
     }
     changePhoto(photoNumber);
 }
 
 function changePhoto(i) {
-    let photo = [
-        './assets/img/IMG_3862.jpeg',
-        './assets/img/IMG_3863.jpeg',
-        './assets/img/IMG_3864.jpeg',
-        './assets/img/IMG_3867.jpeg',
-        './assets/img/IMG_3874.jpeg',
-        './assets/img/IMG_3876.jpeg',
-    ];
-
     document.querySelector(".photo img").setAttribute("src", photo[i]);
 }
