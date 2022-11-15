@@ -26,9 +26,22 @@ const mul = (a, b) => a * b;
 const div = (a, b) => a / b;
 
 function calculate() {
-    const a = Number(askNumberFirst());
-    const b = Number(askNumberSecond());
+    let first = askNumberFirst();
+    let second = askNumberSecond();
+    let a;
+    let b;
     let result = "?";
+    if (first && second) {
+     a = Number(first);
+     b = Number(second);
+    }
+    else {
+        document.querySelector("#result").value = result;
+        return;
+    }
+    //
+
+
     if (operator === "+") {
         result = sum(a, b)
     } else if (operator === "-") {
@@ -36,7 +49,12 @@ function calculate() {
     } else if (operator === "*") {
         result = mul(a, b);
     } else if (operator === "/") {
+        if (b === 0) {
+            result = "на ноль делить низзя"
+        }
+        else {
         result = div(a, b);
+        }
     }
     document.querySelector("#result").value = result;
 
